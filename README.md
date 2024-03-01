@@ -10,8 +10,6 @@ public class AndroidLauncher extends AndroidApplication implements ApplicationLi
 		super.onCreate(savedInstanceState);
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		initialize(this, config);
-
-
 	}
 
 	CameraInputController controller;
@@ -33,9 +31,7 @@ public class AndroidLauncher extends AndroidApplication implements ApplicationLi
 	public void create() {
 		ColladaLoader colla = new ColladaLoader();
 		colla.load(Gdx.files.internal("Jump.dae").read(),4);
-
 		m = colla.geometries.get(0);
-		final float[] finalVerts = new float[m.position.length+m.coord.length+m.normal.length];
 
 		animator.anime = colla.loadAnimation(Gdx.files.internal("Jump.dae").read());
 
@@ -59,6 +55,7 @@ public class AndroidLauncher extends AndroidApplication implements ApplicationLi
 		int PositionID = program.getAttributeLocation("position");
 		int CoordID = program.getAttributeLocation("coord");
 		int NormalID = program.getAttributeLocation("normal");
+
 		position = new VertexBufferObject(true,m.position.length,new VertexAttribute(PositionID,3,"position"));
 		position.setVertices(m.position,0,m.position.length);
 
@@ -74,7 +71,7 @@ public class AndroidLauncher extends AndroidApplication implements ApplicationLi
 		indices = new IndexBufferObject(true,m.indices.length);
 		arr  = new short[ m.indices.length];
 		for(int i =0;i<m.indices.length;i++)
-    arr[i] =(short) m.indices[i];
+		arr[i] =(short) m.indices[i];
 		indices.setIndices(arr,0,arr.length);
 
 	}
