@@ -51,10 +51,9 @@ public class AndroidLauncher extends AndroidApplication implements ApplicationLi
 		controller = new CameraInputController(camera);
 		Gdx.input.setInputProcessor(controller);
 		batch = new ModelBatch();
-		Log.e("t","Compl"+m.position.length);
 
 		program = new ShaderProgram(VERTEX_CODE,FRAGMENT_CODE);
-		Log.e("x", program.getLog());
+
 		int boneID = program.getAttributeLocation("joints");
 		int weightId = program.getAttributeLocation("weights");
 		int PositionID = program.getAttributeLocation("position");
