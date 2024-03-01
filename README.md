@@ -77,16 +77,7 @@ public class AndroidLauncher extends AndroidApplication implements ApplicationLi
 	}
 
 
-	public Array<ModelMaterial> materials = new Array<ModelMaterial>();
-	public ModelMaterial getMaterial (final String name) {
-		for (final ModelMaterial m : materials)
-			if (m.id.equals(name)) return m;
-		ModelMaterial mat = new ModelMaterial();
-		mat.id = name;
-		mat.diffuse = new Color(Color.WHITE);
-		materials.add(mat);
-		return mat;
-	}
+	
 	@Override
 	public void resize(int width, int height) {
 		camera.viewportHeight=height;
