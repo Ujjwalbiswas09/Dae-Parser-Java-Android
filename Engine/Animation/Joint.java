@@ -1,7 +1,7 @@
 package Engine.Animation;
 
 
-import android.opengl.*;
+
 
 import com.badlogic.gdx.graphics.glutils.ShaderProgram;
 import com.badlogic.gdx.math.*;
